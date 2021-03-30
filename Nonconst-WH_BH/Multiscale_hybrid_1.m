@@ -15,18 +15,20 @@ THETA_I = zeros(size(T_realtime)) * nan;
 
 % We firstly assume that our Within-Host subsystem is constant:
 [T_SS, ~, V_SS] = const_WH();
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Interpolation to obatain two piecewise polynomials: 
 %[t_WH, T, ~, V] = Determ_WH_driver();
-%T_poly = spline(t_WH,T); V_poly = spline(t_WH,V); %%% Try linear interpolation as well %%%!!!!!
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%T_poly = spline(t_WH,T); V_poly = spline(t_WH,V); 
+%%% Try linear interpolation as well %%%!!!!!
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 for i = 1 : length(T_realtime)
     
     % Record the infectious time length (note that only non-negative
     % numericla entries are corresponeded to the infectious groups: 
-    infect_length = ones(length(infect_timepoint), 1) * T_realtime(i) - infect_timepoint';
+    infect_length = ones(length(infect_timepoint), 1) * T_realtime(i) ...
+        - infect_timepoint';
     
     % Initialisation: 
     sum_LHS = 0;
@@ -62,7 +64,7 @@ end
 end
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Constant Within-Host Subsystem: 
 function [T_SS, Tstar_SS, V_SS] = const_WH()
 
@@ -83,10 +85,11 @@ V_SS = ((Lambda * p * k) / (c * (mu_c + delta_c)) - mu_c) / k;
 end
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Between-Host Subsystem (Note that transmission coefficient is proportinoal 
 % to viral load times a contant, beta0):
-function [S, I, t, infect_timepoint] = CTMC_BH(mu, Lambda, t_end, population, V_SS)
+function [S, I, t, infect_timepoint] = CTMC_BH(mu, Lambda, t_end, ...
+    population, V_SS)
 
 % CTMS_BH simulation
 
@@ -100,8 +103,9 @@ end
 index = 1;
 
 % We assume that beta = beta0 * V_SS as presented in the research paper
-beta0 = 1 / (10 ^ 13);
-beta = beta0 * V_SS; % Link the Between Host subsystem to the Within Host subsystem
+beta0 = 1 / (10 ^ 15);
+% Link the Between Host subsystem to the Within Host subsystem
+beta = beta0 * V_SS; 
 
 while t(index) <= t_end
     lambda = beta * I(index) * S(index) + mu * S(index) + mu * I(index) + Lambda;
@@ -200,7 +204,7 @@ function [S, I, t, infect_timepoint] = CTMC_BH_driver()
 mu = 10 ^ (-5);
 Lambda = 10 ^ (-5);
 %t_end = 300; population = 10 ^ (5);
-population = 10 ^ (2); t_end = 100;
+population = 10 ^ (2); t_end = 800;
 [~, ~, V_SS] = const_WH();
 
 [S, I, t, infect_timepoint] = CTMC_BH(mu, Lambda, t_end, population, V_SS);
