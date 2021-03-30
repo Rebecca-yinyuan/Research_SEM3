@@ -4,11 +4,11 @@ S0 = 90;
 I0 = 10;
 Lambda = 10 ^ (-5);
 mu = 10 ^ (-5);
-C0 = 10 ^ (-3);
-t_end = 100;
+C0 = 10 ^ (-2);
+t_end = 500;
 
 rep = 20; 
-for j = 9 : 11
+for j = 13 : 13
     figure(j)
     beta0 = 10 ^ (-j);
     for i = 1 : rep
