@@ -1,16 +1,19 @@
 function Theta(S0, I0, Lambda, mu, C0, beta0, t_end)
 
-global Sdie Idie Infect_timepoint infect_timelength Q C S I T_poly V_poly t_array Theta
+global Sdie Idie Infect_timepoint infect_timelength Q C S I 
+global T_poly V_poly t_array Theta
 
-Sdie = []; Idie = []; Infect_timepoint = []; infect_timelength = []; Theta = [];
-Q = []; C =[]; S = []; S(1) = S0; I = []; I(1) = I0; t_array = []; t_array(1) = 0;
+Sdie = []; Idie = []; Infect_timepoint = []; infect_timelength = []; 
+Theta = []; Q = []; C =[]; S = []; S(1) = S0; I = []; I(1) = I0; 
+t_array = []; t_array(1) = 0;
 
 % Initialise all the arrays needed
 t0 = 0; init_system(Lambda, mu, t0, C0); t_index = 1;
 
 % Solve for the W-H system once: 
 [t_WH, T, ~, V] = Determ_WH_driver();
-T_poly = interp1(t_WH,T, 'linear','pp'); V_poly = interp1(t_WH,V, 'linear','pp');
+T_poly = interp1(t_WH,T, 'linear','pp'); 
+V_poly = interp1(t_WH,V, 'linear','pp');
 
 while t_array(length(t_array)) < t_end
     if ~ isempty(Q)
@@ -90,7 +93,8 @@ end
 % CHECK FURTHER FOR LOGIC ERRORS!!!!!!!!!!!!!!!
 function event(t_index, mu, Lambda, beta0, C0)
 
-global Q S I C Sdie Idie V_poly infect_timelength Infect_timepoint t_array T1 Theta T_poly
+global Q S I C Sdie Idie V_poly infect_timelength Infect_timepoint 
+global t_array T1 Theta T_poly
 [T_SS, ~, V_SS] = const_WH();
 
 
@@ -123,7 +127,8 @@ if (length(Idie) + 1 <= index) && (index <= length(Idie) + length(Sdie))
 end
 
 % If some infectious person dies: 
-if (length(Idie) + length(Sdie) + 1 <= index) && (index <= 2 * length(Idie) + length(Sdie))
+if (length(Idie) + length(Sdie) + 1 <= index) && ...
+        (index <= 2 * length(Idie) + length(Sdie))
     S(t_index + 1) = S(t_index); I(t_index + 1) = I(t_index) - 1; 
     
     % Remove that infectious from the system: 
@@ -274,22 +279,25 @@ Q = [C, Sdie, Idie, T1];
 end
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Debugged!
 % Deterministic Within-Host Subsystem: 
-function [t, T, Tstar, V] = Determ_WH(k, c, p, mu_c, delta_c, Lambda, T0, Tstar0, V0, t_end)
+function [t, T, Tstar, V] = Determ_WH(k, c, p, mu_c, delta_c, ...
+    Lambda, T0, Tstar0, V0, t_end)
 
 % I perform the log transformation to the W-H system: 
 y0 = [log(T0); log(Tstar0); log(V0)];
 tspan = [0, t_end];
 opts = odeset('RelTol',1e-8,'AbsTol',1e-8);
-[t, y] = ode15s(@(t,y) ode_sys(t, y, k, c, p, mu_c, delta_c, Lambda), tspan, y0, opts);
+[t, y] = ode15s(@(t,y) ode_sys(t, y, k, c, p, mu_c, delta_c, Lambda), ...
+    tspan, y0, opts);
 T_Log = y(: , 1); T = exp(T_Log);
 Tstar_Log = y(: , 2); Tstar = exp(Tstar_Log);
 V_Log = y(: , 2); V = exp(V_Log);
 
 
-%plot_WH(T, Tstar, V, t); % NOote that Tstar(t) and V(t) almost overlap with each other. 
+% Note that Tstar(t) and V(t) almost overlap with each other. 
+%plot_WH(T, Tstar, V, t); 
 %xlabel('t'); ylabel('cell population');
 %title('Numerical Simulation (Deterministic) for Within-Host Subsystem');
 
@@ -311,7 +319,7 @@ function plot_WH(T, Tstar, V, t)
 end
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Debugged!
 function [t, T, Tstar, V] = Determ_WH_driver()
 
@@ -330,12 +338,13 @@ delta_c = 10 ^ (1);
 
 t_end = 10 ^ (0.6); % One can see that the W-H subsystem timescale is 
                     % much shorter than that of B-H subsystem
-[t, T, Tstar, V] = Determ_WH(k, c, p, mu_c, delta_c, Lambda, T0, Tstar0, V0, t_end); 
+[t, T, Tstar, V] = Determ_WH(k, c, p, mu_c, delta_c, Lambda, T0, ...
+    Tstar0, V0, t_end); 
 
 end
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Debugged!
 % Constant Within-Host Subsystem: 
 function [T_SS, Tstar_SS, V_SS] = const_WH()
