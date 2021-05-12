@@ -1,0 +1,83 @@
+beta0 = 3.000000e-07 
+***********************************
+
+rep = 1
+Time of Noise Infect        I(t) after Noise Infect
+------------------------------------------
+
+rep = 2
+Time of Noise Infect        I(t) after Noise Infect
+------------------------------------------
+
+rep = 3
+Time of Noise Infect        I(t) after Noise Infect
+------------------------------------------
+
+rep = 4
+Time of Noise Infect        I(t) after Noise Infect
+------------------------------------------
+
+rep = 5
+Time of Noise Infect        I(t) after Noise Infect
+------------------------------------------
+
+rep = 6
+Time of Noise Infect        I(t) after Noise Infect
+------------------------------------------
+
+rep = 7
+Time of Noise Infect        I(t) after Noise Infect
+------------------------------------------
+
+rep = 8
+Time of Noise Infect        I(t) after Noise Infect
+------------------------------------------
+
+rep = 9
+Time of Noise Infect        I(t) after Noise Infect
+------------------------------------------
+
+rep = 10
+Time of Noise Infect        I(t) after Noise Infect
+------------------------------------------
+
+rep = 11
+Time of Noise Infect        I(t) after Noise Infect
+------------------------------------------
+
+rep = 12
+Time of Noise Infect        I(t) after Noise Infect
+------------------------------------------
+
+rep = 13
+Time of Noise Infect        I(t) after Noise Infect
+------------------------------------------
+
+rep = 14
+Time of Noise Infect        I(t) after Noise Infect
+------------------------------------------
+
+rep = 15
+Time of Noise Infect        I(t) after Noise Infect
+------------------------------------------
+
+rep = 16
+Time of Noise Infect        I(t) after Noise Infect
+------------------------------------------
+
+rep = 17
+Time of Noise Infect        I(t) after Noise Infect
+------------------------------------------
+
+rep = 18
+Time of Noise Infect        I(t) after Noise Infect
+------------------------------------------
+
+rep = 19
+Time of Noise Infect        I(t) after Noise Infect
+------------------------------------------
+
+rep = 20
+Time of Noise Infect        I(t) after Noise Infect
+------------------------------------------
+
