@@ -5,7 +5,11 @@ function [t, T, Tstar, V] = Determ_WH_driver()
 % The magnitute of parameters is drawn from  the research paper: 
 % 'The Mechanisms for Within-Host Influenza Virus Control Affect 
 % Model-Based Assessment and Prediction of Antiviral Treatment'
-T0 = 10 ^ (8); %8
+
+set(0,'defaultAxesFontSize',30); set(gca,'FontSize',30);
+set(0, 'DefaultLineLineWidth', 1.5);
+
+T0 = 10 ^ (8); 
 Tstar0 = 1;
 V0 = 10 ^ (6);
 

@@ -12,10 +12,11 @@ T_Log = y(: , 1); T = exp(T_Log);
 Tstar_Log = y(: , 2); Tstar = exp(Tstar_Log);
 V_Log = y(: , 3); V = exp(V_Log);
 
+figure()
 
-%plot_WH(T, Tstar, V, t); % Note that Tstar(t) and V(t) almost overlap with each other. 
-%xlabel('t'); ylabel('cell population');
-%title('Numerical Simulation (Deterministic) for Within-Host Subsystem');
+plot_WH(T, Tstar, V, t); % Note that Tstar(t) and V(t) almost overlap with each other. 
+xlabel('t'); ylabel('cell population');
+title('Numerical Simulation for Within-Host Subsystem');
 
 end
 

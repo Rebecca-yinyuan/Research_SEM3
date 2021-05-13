@@ -3,23 +3,23 @@ function Theta_driver_ver3()
 clear
 
 % Commands for plot formatting:
-set(0,'defaultAxesFontSize',20); set(gca,'FontSize',20);
+set(0,'defaultAxesFontSize',30); set(gca,'FontSize',30);
 set(0, 'DefaultLineLineWidth', 1.2);
 %propertyeditor('on');
 
 
 S0 = 90; I0 = 10;
 
-Lambda = 10 ^ (-5); mu = 10 ^ (-5);
+Lambda = 10 ^ (-4); mu = 10 ^ (-5);
 %C0 = 10 ^ (-5);
 C0 = 10 ^ (0);
 
-t_end = 10 ^ 6; rep = 20;
+t_end = 10 ^ 6; rep = 3;
 
 eventlog = fopen('EventLog.txt', 'a+');
 noiselog = fopen('NoiseLog.txt', 'a+');
 
-for j = 7 : 7
+for j = 6 : 6
     
     beta0 =  10 ^ (-j);
     
