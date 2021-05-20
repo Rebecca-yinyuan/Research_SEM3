@@ -14,10 +14,12 @@ Lambda = 10 ^ (-4); mu = 10 ^ (-5);
 %C0 = 10 ^ (-5);
 C0 = 10 ^ (0);
 
-t_end = 10 ^ 6; rep = 3;
+t_end = 10 ^ 7; rep = 3;
 
 eventlog = fopen('EventLog.txt', 'a+');
 noiselog = fopen('NoiseLog.txt', 'a+');
+
+color = ['b', 'r', 'k'];
 
 for j = 6 : 6
     
@@ -33,7 +35,7 @@ for j = 6 : 6
         fprintf(noiselog, 'Time of Noise Infect        I(t) after Noise Infect\n');
         
         Theta_ver3(S0, I0, Lambda, mu, C0, beta0, t_end, eventlog, noiselog);
-        plot_result(j); 
+        plot_result(j, color(i)); 
         
         fprintf(eventlog, '------------------------------------------\n\n');
         fprintf(noiselog, '------------------------------------------\n\n');

@@ -1,9 +1,17 @@
-tspan = 0.0:0.1:10;
-[t,w] = ode45(@ode, tspan, [-0.5;-0.5]);
-plot(w(:,1),w(:,2))
-hold on
-quiver(w(:,1),w(:,2),gradient(w(:,1)),gradient(w(:,2)))
+N = 1000;
+V = 4.3999e+06;
+beta_0 = 10 ^(-8) ;
+num = 1000;
+sum = 0;
 
-function dx = ode(t,x)
-    dx = [x(2) ; - x(2) - 4*x(1)];
+for j = 1 : num
+    count = 0;
+    for i = 1 : 1000
+        if rand <= min(V * beta_0, 1)
+            count = count + 1;
+        end
+    end
+    sum = sum + count;
 end
+
+sum = sum / 1000
