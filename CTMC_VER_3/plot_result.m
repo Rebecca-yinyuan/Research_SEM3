@@ -1,18 +1,32 @@
 function plot_result(j, color)
 
 global t_array S I Theta T_AVE V_AVE
+global V_ave_missinfo T_ave_missinfo Theta_missinfo t_missinfo I_num
 
     figure(j)
     subplot(1, 3, 1)
     opt = append(color,'--');
-    plot(t_array, S, opt); hold on
+    plot(t_array, S, color); hold on
     plot(t_array, I, opt); hold on
+
+%if length(V_ave_missinfo) > 1
+    %index_start = find(t_array == t_missinfo(1), 1 );
+    %index_end = find(t_array == t_missinfo(length(t_missinfo)), 1 );
+    %t_array = Include_miss_info(t_array', t_missinfo', index_start, index_end);
+    %T_AVE = Include_miss_info(T_AVE', T_ave_missinfo, index_start, index_end);
+    %V_AVE = Include_miss_info(V_AVE', V_ave_missinfo, index_start, index_end);
+    %Theta = Include_miss_info(Theta', Theta_missinfo, index_start, index_end);
+    %I = Include_miss_info(I', I_num * ones(size(V_ave_missinfo)), index_start, index_end);
+%end
+
+    figure(j)
     subplot(1, 3, 2)
     plot(t_array, V_AVE, color); hold on
     subplot(1, 3, 3)
     plot(t_array, T_AVE, color); hold on
     %plot(I, Theta, 'b', 'LineWidth', 1.2); hold on
 
+    
     figure(1) %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     plot(I, Theta, color); hold on
     %grad_I = gradient(I); grad_The = gradient(Theta);
@@ -61,3 +75,14 @@ global t_array S I Theta T_AVE V_AVE
     
 end
 
+
+
+function info = Include_miss_info(orignal_array, miss_info, index_start, index_end)
+
+info1 = orignal_array(1 : index_start - 1);
+info2 = miss_info;
+info3 = orignal_array(index_end + 1 : end);
+
+info = cat(1, info1, info2, info3);
+
+end

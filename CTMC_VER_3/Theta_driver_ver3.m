@@ -14,7 +14,7 @@ Lambda = 10 ^ (-4); mu = 10 ^ (-5);
 %C0 = 10 ^ (-5);
 C0 = 10 ^ (0);
 
-t_end = 10 ^ 7; rep = 3;
+t_end = 10 ^ 6; rep = 1;
 
 eventlog = fopen('EventLog.txt', 'a+');
 noiselog = fopen('NoiseLog.txt', 'a+');

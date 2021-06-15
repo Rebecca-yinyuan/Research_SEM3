@@ -1,7 +1,7 @@
 function E2(t_index, C0, DeltaT, eventlog, remove_S_index)
 % If some susceptible person with index remove_S_index dies: 
 
-global S I C Sdie infect_timelength flag t_array
+global S I C Sdie infect_timelength flag t_array 
 
 S(t_index + 1) = S(t_index) - 1; I(t_index + 1) = I(t_index); 
     

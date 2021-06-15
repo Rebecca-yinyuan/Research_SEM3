@@ -2,7 +2,7 @@ function E4(beta0, t_index, DeltaT, I_index, eventlog, noiselog, mu, C0)
 
 % If an infectious person i = I_index interacts with a susceptible person
 
-global S I C Sdie Idie infect_timelength flag t_array V_poly Infect_timepoint V_SS
+global S I C Sdie Idie infect_timelength flag t_array V_poly Infect_timepoint V_SS 
 
 V_1 = ppval(V_poly, infect_timelength(I_index));
 
