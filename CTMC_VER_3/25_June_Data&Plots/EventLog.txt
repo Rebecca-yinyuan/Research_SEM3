@@ -1,0 +1,124 @@
+beta0 = 1.000000e-06 
+***********************************
+
+rep = 1
+Time     Event
+0.000447 One Susceptible Becomes Infectious
+0.000529 One Susceptible Becomes Infectious
+0.002116 One Susceptible Becomes Infectious
+0.003717 One Susceptible Becomes Infectious
+0.004359 One Susceptible Becomes Infectious
+0.005700 One Susceptible Becomes Infectious
+0.006460 One Susceptible Becomes Infectious
+0.008231 One Susceptible Becomes Infectious
+0.009303 One Susceptible Becomes Infectious
+0.009339 One Susceptible Becomes Infectious
+0.011687 One Susceptible Becomes Infectious
+0.011944 Nothing happens due to low transmission rate 
+0.013503 One Susceptible Becomes Infectious
+0.014880 One Susceptible Becomes Infectious
+0.015418 One Susceptible Becomes Infectious
+0.015921 One Susceptible Becomes Infectious
+0.016462 One Susceptible Becomes Infectious
+0.016532 One Susceptible Becomes Infectious
+0.016596 One Susceptible Becomes Infectious
+0.016724 One Susceptible Becomes Infectious
+0.017929 One Susceptible Becomes Infectious
+0.018310 One Susceptible Becomes Infectious
+0.018452 One Susceptible Becomes Infectious
+0.018707 One Susceptible Becomes Infectious
+0.018832 One Susceptible Becomes Infectious
+0.019123 One Susceptible Becomes Infectious
+0.019368 One Susceptible Becomes Infectious
+0.019759 One Susceptible Becomes Infectious
+0.020291 One Susceptible Becomes Infectious
+0.020512 One Susceptible Becomes Infectious
+0.020521 One Susceptible Becomes Infectious
+0.021138 One Susceptible Becomes Infectious
+0.021199 One Susceptible Becomes Infectious
+0.021796 One Susceptible Becomes Infectious
+0.022005 One Susceptible Becomes Infectious
+0.023282 One Susceptible Becomes Infectious
+0.023309 One Susceptible Becomes Infectious
+0.023614 One Susceptible Becomes Infectious
+0.023896 One Susceptible Becomes Infectious
+0.024144 One Susceptible Becomes Infectious
+0.024307 One Susceptible Becomes Infectious
+0.024530 One Susceptible Becomes Infectious
+0.024544 One Susceptible Becomes Infectious
+0.024697 One Susceptible Becomes Infectious
+0.025150 One Susceptible Becomes Infectious
+0.025201 One Susceptible Becomes Infectious
+0.025715 One Susceptible Becomes Infectious
+0.025785 One Susceptible Becomes Infectious
+0.027738 One Susceptible Becomes Infectious
+0.027924 One Susceptible Becomes Infectious
+0.029340 One Susceptible Becomes Infectious
+0.030110 One Susceptible Becomes Infectious
+0.030613 One Susceptible Becomes Infectious
+0.030651 One Susceptible Becomes Infectious
+0.030718 One Susceptible Becomes Infectious
+0.031066 One Susceptible Becomes Infectious
+0.031078 One Susceptible Becomes Infectious
+0.031083 One Susceptible Becomes Infectious
+0.031414 One Susceptible Becomes Infectious
+0.031433 One Susceptible Becomes Infectious
+0.032407 One Susceptible Becomes Infectious
+0.033588 One Susceptible Becomes Infectious
+0.033716 One Susceptible Becomes Infectious
+0.034391 One Susceptible Becomes Infectious
+0.034475 One Susceptible Becomes Infectious
+0.037664 One Susceptible Becomes Infectious
+0.038809 One Susceptible Becomes Infectious
+0.038940 One Susceptible Becomes Infectious
+0.039935 One Susceptible Becomes Infectious
+0.040040 One Susceptible Becomes Infectious
+0.041148 One Susceptible Becomes Infectious
+0.041546 One Susceptible Becomes Infectious
+0.042031 One Susceptible Becomes Infectious
+0.042259 One Susceptible Becomes Infectious
+0.042872 One Susceptible Becomes Infectious
+0.043469 One Susceptible Becomes Infectious
+0.043968 One Susceptible Becomes Infectious
+0.045076 One Susceptible Becomes Infectious
+0.045889 One Susceptible Becomes Infectious
+0.046009 One Susceptible Becomes Infectious
+0.046301 One Susceptible Becomes Infectious
+0.046751 One Susceptible Becomes Infectious
+0.047684 One Susceptible Becomes Infectious
+0.050469 One Susceptible Becomes Infectious
+0.054257 One Susceptible Becomes Infectious
+0.055795 One Susceptible Becomes Infectious
+0.058901 One Susceptible Becomes Infectious
+0.060059 One Susceptible Becomes Infectious
+0.067799 One Susceptible Becomes Infectious
+0.090035 One Susceptible Becomes Infectious
+0.092269 One Susceptible Becomes Infectious
+10474.352006 One Infectious Dies
+22125.479176 One Infectious Dies
+34802.767492 One Infectious Dies
+50111.786175 One Infectious Dies
+68213.863664 One Infectious Dies
+87019.196412 One Infectious Dies
+107718.576344 One Infectious Dies
+130486.472891 One Infectious Dies
+156817.021968 One Infectious Dies
+185098.972332 One Infectious Dies
+219021.803133 One Infectious Dies
+253401.100762 One Infectious Dies
+291109.748617 One Infectious Dies
+335193.469398 One Infectious Dies
+380921.817893 One Infectious Dies
+427200.296112 One Infectious Dies
+478114.276702 One Infectious Dies
+531474.164168 One Infectious Dies
+585852.618285 One Infectious Dies
+646157.759201 One Infectious Dies
+707632.456711 One Infectious Dies
+771173.974262 One Infectious Dies
+835573.810589 One Infectious Dies
+904820.944770 One Infectious Dies
+974095.546500 One Infectious Dies
+1051032.023955 One Infectious Dies
+------------------------------------------
+
