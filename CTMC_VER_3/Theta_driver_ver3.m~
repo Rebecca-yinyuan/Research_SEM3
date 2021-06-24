@@ -2,8 +2,6 @@ function Theta_driver_ver3()
 
 clear
 
-global t_array S I Theta T_AVE V_AVE
-
 % Commands for plot formatting:
 set(0,'defaultAxesFontSize',30); set(gca,'FontSize',30);
 set(0, 'DefaultLineLineWidth', 1.2);
@@ -21,7 +19,7 @@ t_end = 10 ^ 6; rep = 1;
 eventlog = fopen('EventLog.txt', 'a+');
 noiselog = fopen('NoiseLog.txt', 'a+');
 missingtlog = fopen('miss_start_index', 'a+');
-grid_add = 800; % harverst the inter-event time data
+grid_add = 10; % harverst the inter-event time data
 
 Slog = fopen('S.txt', 'wt');
 Ilog = fopen('I.txt', 'wt');
@@ -47,12 +45,8 @@ for j = 6 : 6
         fprintf(noiselog, 'Time of Noise Infect        I(t) after Noise Infect\n');
         
         [t_array, S, I, Theta, T_AVE, V_AVE] = Theta_ver3(S0, I0, Lambda, mu, C0, beta0, t_end, eventlog, noiselog, missingtlog, grid_add);
-        plot_result(j, color(i)); 
         
-        % remove the inter-event data point: 
-        [t_array, S, I, Theta, T_AVE, V_AVE] = remove_interevent_data(t_array, S, I, Theta, T_AVE, V_AVE, grid_add, 'miss_start_index');
-        plot_result(j * 2, color(i)); 
-     
+        plot_result(j, color(i)); 
         fprintf(Slog,'%d\n', S'); fclose(Slog);
         fprintf(Ilog,'%d\n', I'); fclose(Ilog);
         fprintf(tlog,'%f\n', t_array'); fclose(tlog);

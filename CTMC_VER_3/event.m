@@ -1,6 +1,6 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % CHECK FURTHER FOR LOGIC ERRORS!!!!!!!!!!!!!!!
-function [DeltaT, t_index] = event(t_index, beta0, C0, eventlog, noiselog, mu)
+function [DeltaT, t_index, grid_add] = event(t_index, beta0, C0, eventlog, noiselog, mu, missingtlog, grid_add)
 
 global Q C Sdie Idie t_array T1 flag flag_E1 flag_missinfo V_ave_missinfo S I V_AVE T_AVE Theta
 global T_ave_missinfo Theta_missinfo t_missinfo I_num
@@ -14,12 +14,12 @@ global T_ave_missinfo Theta_missinfo t_missinfo I_num
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % We will lose average within-host information if 'DeltaT' is too large.
 % Therefore, we are going to include those data manually:
-threshold = 5;
+threshold = 10;
 if DeltaT > threshold 
-    t_start = t_array(t_index);
+    t_start = t_array(t_index); fprintf(missingtlog, '%d\n', t_index); 
     t_end = t_start + DeltaT;
     I_num = length(Idie);
-    [V_ave_missinfo, T_ave_missinfo, Theta_missinfo, t_missinfo] = miss_info(t_start, t_end, I_num);
+    [V_ave_missinfo, T_ave_missinfo, Theta_missinfo, t_missinfo] = miss_info(t_start, t_end, I_num, grid_add);
     
     % We need to insert those info into our corresponding matrices as well:
     S(t_index + 1 : t_index + length(t_missinfo)) = length(Sdie);

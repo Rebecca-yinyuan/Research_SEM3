@@ -1,12 +1,12 @@
-function [V_ave_missinfo, T_ave_missinfo, Theta_missinfo, t_missinfo] = miss_info(t_start, t_end, I_num)
+function [V_ave_missinfo, T_ave_missinfo, Theta_missinfo, t_missinfo] = miss_info(t_start, t_end, I_num, grid_add)
 
 global V_poly T_poly infect_timelength V_ave_missinfo T_ave_missinfo
 global Theta_missinfo t_missinfo
 
 
 
-% generate the meshline: 
-t_missinfo = (t_start : (t_end - t_start) / 500  : t_end);
+% generate the meshline:
+t_missinfo = (t_start : (t_end - t_start) / grid_add  : t_end);
 
 % initialise the array
 V_ave_missinfo = zeros(length(t_missinfo), 1); 

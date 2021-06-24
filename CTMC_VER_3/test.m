@@ -1,5 +1,18 @@
 %%
-N = 1000;
+
+clc
+
+
+N = 10^8;
+summ = 0;
+
+for i = 1 : N
+    summ = summ - log(rand) / 50;
+end
+
+summ / N
+
+%%
 V = 4.3999e+06;
 beta_0 = 10 ^(-8) ;
 num = 1000;
@@ -69,4 +82,4 @@ scatter((N + 1) * ones(size(Theta)), Theta); hold on
 xlabel('time');
 ylabel('\Theta');
 
-Theta
+%Theta
