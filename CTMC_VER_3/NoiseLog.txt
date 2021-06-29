@@ -5,11 +5,3 @@ rep = 1
 Time of Noise Infect        I(t) after Noise Infect
 ------------------------------------------
 
-rep = 2
-Time of Noise Infect        I(t) after Noise Infect
-------------------------------------------
-
-rep = 3
-Time of Noise Infect        I(t) after Noise Infect
-------------------------------------------
-
