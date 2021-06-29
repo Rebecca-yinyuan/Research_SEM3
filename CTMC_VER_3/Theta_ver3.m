@@ -1,4 +1,4 @@
-function [t_array, S, I, Theta, T_AVE, V_AVE] = Theta_ver3(S0, I0, Lambda, mu, C0, beta0, t_end, eventlog, noiselog, missingtlog, grid_add)
+function [t_array, S, I, Theta, T_AVE, V_AVE] = Theta_ver3(S0, I0, Lambda, mu, C0, beta0, t_end, eventlog, missingtlog, grid_add)
 
 global Sdie Idie Infect_timepoint infect_timelength Q C S I T_poly V_poly t_array Theta T_SS V_SS flag flag_E1 V_AVE T_AVE flag_missinfo
 global T_ave_missinfo Theta_missinfo t_missinfo V_ave_missinfo I_num
@@ -23,7 +23,7 @@ init_system(Lambda, mu, t0, C0); t_index = 1;
 
 while (t_array(length(t_array)) < t_end) 
     if ~ isempty(Q)
-        [DeltaT, t_index] = event(t_index, beta0, C0, eventlog, noiselog, mu, missingtlog, grid_add);
+        [DeltaT, t_index] = event(t_index, beta0, C0, eventlog, mu, missingtlog, grid_add);
         % Update the time array:
         t_index  = t_index + 1;
         t_array(t_index) = t_array(t_index - 1) + DeltaT;

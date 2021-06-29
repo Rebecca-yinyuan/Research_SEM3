@@ -1,4 +1,4 @@
-function E4(beta0, t_index, DeltaT, I_index, eventlog, noiselog, mu, C0)
+function E4(beta0, t_index, DeltaT, I_index, eventlog, mu, C0)
 
 % If an infectious person i = I_index interacts with a susceptible person
 
@@ -27,11 +27,11 @@ if (u5 <= min(TV, 1)) && (flag == 1)
      
      % Record whether the new infection belongs to the category of disease
      % breakout, or the catergory of later-on noise:
-     if t_index >= 2
-         if S(t_index - 1) == 0 % later-on noise
-             fprintf(noiselog,'%f       %d\n', t_array(t_index) + DeltaT, I(t_index + 1));
-         end
-     end
+     %if t_index >= 2
+     %    if S(t_index - 1) == 0 % later-on noise
+     %        fprintf(noiselog,'%f       %d\n', t_array(t_index) + DeltaT, I(t_index + 1));
+     %    end
+     %end
      
      
      % The susceptible is randomly selected and deleted from the group

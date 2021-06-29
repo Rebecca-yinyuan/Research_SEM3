@@ -56,7 +56,7 @@ global V_ave_missinfo T_ave_missinfo Theta_missinfo t_missinfo I_num
         % dynamics of the initial disease transmission period
         figure(j)
         subplot(1, 3, 1)
-        opt = append(color,'--');
+        opt = append(color, '--');
         plot(t_array(1 : index + 1), S(1 : index + 1), color); hold on
         plot(t_array(1 : index + 1), I(1 : index + 1), opt); hold on
         xline(t_decade, '-.', 'LineWidth', 1.2); hold on

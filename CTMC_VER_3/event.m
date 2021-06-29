@@ -1,6 +1,6 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % CHECK FURTHER FOR LOGIC ERRORS!!!!!!!!!!!!!!!
-function [DeltaT, t_index, grid_add] = event(t_index, beta0, C0, eventlog, noiselog, mu, missingtlog, grid_add)
+function [DeltaT, t_index, grid_add] = event(t_index, beta0, C0, eventlog, mu, missingtlog, grid_add)
 
 global Q C Sdie Idie t_array T1 flag flag_E1 flag_missinfo V_ave_missinfo S I V_AVE T_AVE Theta
 global T_ave_missinfo Theta_missinfo t_missinfo I_num
@@ -71,7 +71,7 @@ else
         E3(t_index, DeltaT, eventlog, remove_I_index);
     else
         I_index = index;
-        E4(beta0, t_index, DeltaT, I_index, eventlog, noiselog, mu, C0);
+        E4(beta0, t_index, DeltaT, I_index, eventlog, mu, C0);
     end
   
 end
