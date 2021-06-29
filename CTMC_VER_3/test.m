@@ -38,7 +38,7 @@ clc
 T_poly = interp1(t_WH,T, 'linear','pp'); V_poly = interp1(t_WH,V, 'linear','pp');
 [T_SS, ~, V_SS] = const_WH();
 
-N = 80;
+N = 100;
 LHS_sum = V_SS * T_SS * N;
 V_sum = V_SS * N;
 T_sum = T_SS * N;

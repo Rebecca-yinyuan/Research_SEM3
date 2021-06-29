@@ -12,7 +12,7 @@ set(0, 'DefaultLineLineWidth', 1.2);
 
 S0 = 90; I0 = 10;
 
-Lambda = 10 ^ (-4); mu = 10 ^ (-5);
+Lambda = 10 ^ (-3); mu = 10 ^ (-5);
 %C0 = 10 ^ (-5);
 C0 = 10 ^ (0);
 
@@ -21,7 +21,7 @@ t_end = 10 ^ 6; rep = 1;
 eventlog = fopen('EventLog.txt', 'a+');
 noiselog = fopen('NoiseLog.txt', 'a+');
 missingtlog = fopen('miss_start_index', 'a+');
-grid_add = 800; % harverst the inter-event time data
+grid_add = 80; % harverst the inter-event time data
 
 Slog = fopen('S.txt', 'wt');
 Ilog = fopen('I.txt', 'wt');

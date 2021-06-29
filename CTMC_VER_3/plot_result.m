@@ -111,7 +111,7 @@ global V_ave_missinfo T_ave_missinfo Theta_missinfo t_missinfo I_num
         subplot(1, 2, 2)
         c2 = c(index + 1 : end);
         scatter(I(1 : index), Theta(1 : index), sc1); hold on
-        scatter(I(index + 1 : end) - 8, Theta(index + 1 : end), sc2, c2, 'filled'); hold on
+        scatter(I(index + 1 : end), Theta(index + 1 : end) - 8, sc2, c2, 'filled'); hold on
         
     else
         fprintf('!!!!!!')
