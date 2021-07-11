@@ -11,7 +11,7 @@ remove_index = zeros(length(data) * each_remove, 1);
 j = 1;
 % record each entry to be removed:
 for i = 1 : length(data)
-    remove_index(j : j + grid_add) = (data(i) : 1 : data(i) + grid_add)';
+    remove_index(j : j + grid_add) = (data(i) + 1 : 1 : data(i) + grid_add + 1)';
     j = j + grid_add + 1;
 end
 

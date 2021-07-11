@@ -15,7 +15,7 @@ set(findall(gcf,'-property','FontSize'),'FontSize',30)
 S0 = 90; I0 = 10;
 Lambda = 10 ^ (-3); mu = 10 ^ (-5); C0 = 10 ^ (0);
 t_end = 10 ^ 6; rep = 1;
-grid_add = 80; % harverst the inter-event time data
+grid_add = 10000; % harverst the inter-event time data
 
 eventlog = fopen('EventLog.txt', 'a+');
 %noiselog = fopen('NoiseLog.txt', 'a+');
@@ -77,15 +77,15 @@ for j = 6 : 6
         'V_missinfo.txt', 'TT_missinfo.txt', 'Theta_missinfo.txt', ...
         't_missinfo.txt', 'S_missinfo.txt', 'I_missinfo.txt', j, color(i));
         
-        delete 'S.txt' 'I.txt' 't.txt' 'Theta.txt' ...
-        'V_missinfo.txt' 'TT_missinfo.txt' 'Theta_missinfo.txt' ...
-        'S_missinfo.txt' 'I_missinfo.txt' 't_missinfo.txt'...
-        'miss_start_index.txt' 'VV.txt' 'TT.txt'
+        %delete 'S.txt' 'I.txt' 't.txt' 'Theta.txt' ...
+        %'V_missinfo.txt' 'TT_missinfo.txt' 'Theta_missinfo.txt' ...
+        %'S_missinfo.txt' 'I_missinfo.txt' 't_missinfo.txt'...
+        %'miss_start_index.txt' 'VV.txt' 'TT.txt'
 
     end
     
     fclose(eventlog);
-    delete *.txt
+    %delete *.txt
     %fclose(noiselog);
     
     %plot_edit_title(j, beta0, rep, S0, I0);
