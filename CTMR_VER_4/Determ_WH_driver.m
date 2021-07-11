@@ -2,6 +2,12 @@
 % Debugged!
 function [t, T, Tstar, V] = Determ_WH_driver()
 
+set(groot,'defaultAxesFontName','Times New Roman');
+%set(gca, 'FontName', 'Times New Roman');
+set(0,'defaultAxesFontSize',30); set(gca,'FontSize',30);
+set(0, 'DefaultLineLineWidth', 2.5); 
+set(findall(gcf,'-property','FontSize'),'FontSize',30);
+
 % The magnitute of parameters is drawn from  the research paper: 
 % 'The Mechanisms for Within-Host Influenza Virus Control Affect 
 % Model-Based Assessment and Prediction of Antiviral Treatment'
@@ -22,7 +28,9 @@ Lambda = 1.1 * (mu_c * (mu_c + delta_c) * c) / (k * p);
 
 %R_0 = T0 * k * p / (c * (mu_c + delta_c)) % Basic reproductive number
 
-t_end = 10 ^ 7; % One can see that the W-H subsystem timescale is 
+t_end = 30;
+
+%t_end = 10 ^ 7; % One can see that the W-H subsystem timescale is 
                     % much shorter than that of B-H subsystem
 [t, T, Tstar, V] = Determ_WH(k, c, p, mu_c, delta_c, Lambda, T0, Tstar0, V0, t_end); 
 

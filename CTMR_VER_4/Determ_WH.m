@@ -12,10 +12,13 @@ T_Log = y(: , 1); T = exp(T_Log);
 Tstar_Log = y(: , 2); Tstar = exp(Tstar_Log);
 V_Log = y(: , 3); V = exp(V_Log);
 
-%figure()
-%plot_WH(T, Tstar, V, t); % Note that Tstar(t) and V(t) almost overlap with each other. 
-%xlabel('t'); ylabel('cell population');
-%title('Numerical Simulation for Within-Host Subsystem');
+set(groot,'defaultAxesFontName','Times New Roman');
+set(0,'defaultAxesFontSize',30); set(gca,'FontSize',30);
+set(0, 'DefaultLineLineWidth', 2.5); 
+set(findall(gcf,'-property','FontSize'),'FontSize',30);
+plot_WH(T, Tstar, V, t); % Note that Tstar(t) and V(t) almost overlap with each other. 
+xlabel('t'); ylabel('cell population');
+title('Numerical Simulation for Within-Host Subsystem');
 
 end
 
@@ -30,6 +33,7 @@ end
 
 
 function plot_WH(T, Tstar, V, t)
-    plot(t, T, t, Tstar, t, V, 'LineWidth', 1.5); 
+    figure(1)
+    plot(t, T, 'b', t, Tstar, 'r', t, V, 'k'); 
     legend('T(t)', 'T^{*}(t)', 'V(t)');
 end

@@ -10,6 +10,7 @@ T_sum = 0;
 for j = 1 : I(length(I))
     V_j = ppval(V_poly, infect_timelength(j)); 
     T_j = ppval(T_poly, infect_timelength(j));
+    
     %if V_j < V_SS
     %    V_j = V_SS;
     %end
@@ -27,9 +28,8 @@ for j = 1 : I(length(I))
     T_sum = T_sum + T_j;
 end
 
-
 for j = 1 : S(length(S))
-    T_sum = T_sum + Lambda / mu + Lambda * exp(-mu * t_array(length(t_array)));
+    T_sum = T_sum + Lambda / mu + (10 ^ 8 - Lambda / mu) * exp(-mu * t_array(length(t_array)));
 end
 
 

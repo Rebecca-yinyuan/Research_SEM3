@@ -54,7 +54,7 @@ for i = 1 : I(length(I))
     VT_sum = VT_sum + ppval(V_poly, 0) * ppval(T_poly, 0);
 end
 for i = 1 : S(length(S))
-    T_sum = T_sum + Lambda + Lambda / mu;
+    T_sum = T_sum + 10 ^ (8);
 end
 
 V_AVE(1) = V_sum / (S(length(S)) + I(length(I)));
